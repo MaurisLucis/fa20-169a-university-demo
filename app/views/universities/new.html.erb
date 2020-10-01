@@ -1,0 +1,11 @@
+<%= form_tag(universities_path, method: "post", id: "university_params") do %>
+	<%= label :university, :name, "University Name" %>
+	<%= text_field :university, 'name' %>
+
+        <%= label :university, :rank, "Rank" %>
+        <%= text_field :university, 'rank' %>
+
+        <%= label :university, :remarks, "Remarks" %>
+        <%= text_field :university, 'remarks' %>
+        <%= submit_tag "Submit" %>
+<% end %>

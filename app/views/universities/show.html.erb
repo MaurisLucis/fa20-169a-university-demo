@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<% if @university.nil? %>
+	<head><title>"404 Not Found"</title></head>
+	<body>
+		<h3>The requested university was not found.</h3>
+		<%= link_to "Home", universities_path %>
+	</body>
+<% else %>
+	<head>
+		<title><%= @university.name %></title>
+	</head>
+	<body>
+		<h2><%= @university.name || "NO NAME GIVEN" %></h2>
+		<h3>Rank</h3>
+		<h3><%= @university.rank %></h3>
+		<h3>Remarks</h3>
+		<p><%= @university.remarks %></p>
+	</body>
+<% end %>
+</html>

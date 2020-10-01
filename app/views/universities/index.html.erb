@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>University Catalogue</title>
+	</head>
+<% if @universities.nil? || @universities.empty? %>
+        <body>
+		<h3>No universities found.</h3>
+		<%= link_to "Create a new university.", new_university_path %>
+	</body>
+<% else %>
+	<body>
+		<div class="container vertical-center" id="uni_table">
+			<div class="row bg-dark text-white">
+				<div class="col-6 text-center">Name</div>
+				<div class="col-2 text-center">Rank</div>
+				<div class="col-4 text-center">Remarks</div>
+			</div>
+			<%= render partial: 'university_entry', collection: @universities %>
+			<div class="float-left">
+				<%= link_to "Create new university.", new_university_path %>
+			</div>
+		</div>
+	</body>
+<% end %>
+</html>
